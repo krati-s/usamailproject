@@ -1,0 +1,6 @@
+import './bootstrap.min.css'
+import './all.min.css'
+import './aos.css'
+import './fontawesome.min.css'
+import './style.css'
+import './responsive.css'
