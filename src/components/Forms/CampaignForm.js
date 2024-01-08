@@ -29,8 +29,24 @@ const CampaignForm = () => {
             mailingList: 'Mailing List',
             mailClassName: 'Mail Class Name',
             ProjectMailDate: 'Project Mail Date',
+            postcardInchesX : 'Postcard inches ',
+            postcardInchesY : 'Postcard inches ',
+            postcardMailPiece : 'Postcard mail piece',
+            foldedMailerOriginalX : 'Folded mailer original inches',
+            foldedMailerOriginalY : 'Folded mailer original inches',
+            foldedMailerFinalX : 'Folded mailer final inches',
+            foldedMailerFinalY : 'Folded mailer final inches',
+            foldedMailerMailPiece : 'Folded mailer mail piece' ,
+            carrierEnvelopOther : 'Carrier envelop other',
+            carrierEnvelop :'Carrier envelop ',
+            envelopArtwork : 'Envelop Artwork',
+            variableTextCoverLetter : 'Variable Text Cover Letter',
+            genericCoverLetter : 'Generic Cover Letter',
+            otherMailProject : 'Other Mail Project',
+            insertsDetail : 'Inserts Detail',
+            insertsCount : 'Inserts Count'
           };
-        const requiredFields = ['firstName', 'lastName', 'mailAddress', 'businessName', 'Quantity', 'graphicArtwork','mailingList','mailClassName','ProjectMailDate','postcardInchesX','postcardInchesY',' postcardMailPiece','foldedMailerOriginalX','foldedMailerOriginalY','foldedMailerFinalX','foldedMailerFinalY','foldedMailerMailPiece','carrierEnvelopOther','carrierEnvelop','envelopArtwork','variableTextCoverLetter','genericCoverLetter','otherMailProject','insertsDetail','insertsCount'];
+        const requiredFields = ['firstName', 'lastName', 'mailAddress', 'businessName', 'Quantity', 'graphicArtwork','mailingList','mailClassName','ProjectMailDate','postcardInchesX','postcardInchesY','postcardMailPiece','foldedMailerOriginalX','foldedMailerOriginalY','foldedMailerFinalX','foldedMailerFinalY','foldedMailerMailPiece','carrierEnvelopOther','carrierEnvelop','envelopArtwork','variableTextCoverLetter','genericCoverLetter','otherMailProject','insertsDetail','insertsCount'];
        
     for (const field of requiredFields) {
         const value = e.target[field].value.trim();
@@ -84,7 +100,6 @@ const CampaignForm = () => {
                 console.error('Email failed to send:', error);
             });
     }};
-    console.log(err);
     return (
         <section className="order-form inner-padding" data-aos="fade-left" data-aos-duration="1500">
             <div className="container">
@@ -218,11 +233,14 @@ const CampaignForm = () => {
                                 <input type="text" placeholder="11" name='postcardInchesY' />
                                 inches by
                             </span>
+                            <label className='inputError'>{err?.postcardInchesX && err.postcardInchesX}</label>
+                            <label className='inputError'>{err?.postcardInchesY && err.postcardInchesY}</label>
                         </p>
                     </div>
                     <div className="input-feild">
                         <label>Describe the mail piece:</label>
                         <input type="mail" id="mailPiece" name="postcardMailPiece" />
+                        <label className='inputError'>{err?.postcardMailPiece && err.postcardMailPiece}</label>
                     </div>
                 </div>
 
@@ -237,6 +255,8 @@ const CampaignForm = () => {
                                 <input type="text" placeholder="11" name='foldedMailerOriginalY'/>
                                 inches by
                             </span>
+                            <label className='inputError'>{err?.foldedMailerOriginalX && err.foldedMailerOriginalX}</label>
+                            <label className='inputError'>{err?.foldedMailerOriginalY && err.foldedMailerOriginalY}</label>
                         </p>
                         <p className="gray-clr">
                             What is the finished (final fold) size of the self-mailer?
@@ -246,11 +266,14 @@ const CampaignForm = () => {
                                 <input type="text" placeholder="11" name='foldedMailerFinalY'/>
                                 inches by
                             </span>
+                            <label className='inputError'>{err?.foldedMailerFinalX && err.foldedMailerFinalX}</label>
+                            <label className='inputError'>{err?.foldedMailerFinalY && err.foldedMailerFinalY}</label>
                         </p>
                     </div>
                     <div className="input-feild">
                         <label>Describe the mail piece:</label>
                         <input type="mail" id="mailPiece" name="foldedMailerMailPiece" />
+                            <label className='inputError'>{err?.foldedMailerMailPiece && err.foldedMailerMailPiece}</label>
                     </div>
                 </div>
 
@@ -275,6 +298,8 @@ const CampaignForm = () => {
                                 <input type="mail" id="mailPiece" name="carrierEnvelopOther" />
                             </div>
                         </div>
+                        <label className='inputError'>{err?.carrierEnvelop && err.carrierEnvelop}</label>
+                        <label className='inputError'>{err?.carrierEnvelopOther && err.carrierEnvelopOther}</label>
                     </div>
                     <div className="pia-className align-items-center Mailer_div mb-35">
                         <p className="gray-clr me-4">Artwork for envelope: (select)</p>
@@ -286,6 +311,7 @@ const CampaignForm = () => {
                             <input type="radio"  name='envelopArtwork' value='Multi-Color' />
                             <span className="checkmark"></span>
                         </label>
+                        <label className='inputError'>{err?.envelopArtwork && err.envelopArtwork}</label>
                     </div>
                     <div className="pia-className Mailer_div mb-35">
                         <p className="gray-clr me-4 d-flex flex-column gap-1">Is the salutation on the cover letter
@@ -302,6 +328,7 @@ const CampaignForm = () => {
                             <input type="radio" name='variableTextCoverLetter' value='No' />
                             <span className="checkmark"></span>
                         </label>
+                        <label className='inputError'>{err?.variableTextCoverLetter && err.variableTextCoverLetter}</label>
                     </div>
                     <div className="pia-className Mailer_div">
                         <p className="gray-clr me-4 d-flex flex-column gap-1">Is the salutation on the cover letter
@@ -317,6 +344,7 @@ const CampaignForm = () => {
                             <input type="radio" name='genericCoverLetter' value='No'/>
                             <span className="checkmark"></span>
                         </label>
+                        <label className='inputError'>{err?.genericCoverLetter && err.genericCoverLetter}</label>
                     </div>
                 </div>
 
@@ -324,14 +352,17 @@ const CampaignForm = () => {
                     <div className="input-feild mb-35">
                         <label>How many inserts into envelope: (number select field)</label>
                         <input type="mail" id="mailPiece" name="insertsCount"  />
+                        <label className='inputError'>{err?.insertsCount && err.insertsCount}</label>
                     </div>
                     <div className="input-feild mb-35">
                         <label>Describe inserts</label>
                         <input type="mail" id="mailPiece" name="insertsDetail" />
+                        <label className='inputError'>{err?.insertsDetail && err.insertsDetail}</label>
                     </div>
                     <div className="input-feild mb-35">
                         <label>Other Mail Project: (please describe)</label>
                         <input type="mail" id="mailPiece" name="otherMailProject" />
+                        <label className='inputError'>{err?.otherMailProject && err.otherMailProject}</label>
                     </div>
                     <div className="submit-btn">
                             <button type='submit' className="btn r-btn">Submit</button>
