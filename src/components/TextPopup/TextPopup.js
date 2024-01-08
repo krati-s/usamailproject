@@ -4,14 +4,11 @@ import chat from '../../assets/svg/chat.svg'
 import cross from '../../assets/svg/cross-svgrepo-com.svg'
 import brandLogo from '../../assets/images/social-lexicon.png'
 import { sendMessage } from '../../redux/slice/chatSlice';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 const TextPopup = ({ show, close, handleShow, isSuccess, setIsSuccess }) => {
   const dispatch = useDispatch()
+  const chatResponse = useSelector(state => state.chat.status)
   const [formData, setFormData] = useState({
-    accountId: '11387',
-    recipientPhone: '3098726245',
-    chatId: '2e87e10a-6ffb-4fde-94d4-4b481c7a43ed',
-    apiurl: 'https://app.textrequest.com/webservices/sms-chat',
     textName: '',
     mobilePhone: '',
     message: ''
@@ -52,22 +49,13 @@ const TextPopup = ({ show, close, handleShow, isSuccess, setIsSuccess }) => {
       setErrors(validationErrors);
       return;
     }
-    const chat1 = dispatch(sendMessage({textName : formData.textName , message : formData.message , mobilePhone : formData.mobilePhone}))
-    console.log('sms',chat1.status);
+
 
     // Perform the API call
     try {
-      const response = await axios.post(formData.apiurl, {
-        accountId: formData.accountId,
-        id: formData.chatId,
-        message: formData.message,
-        senderName: formData.textName,
-        senderPhoneNumber: formData.mobilePhone,
-        recipientPhoneNumber: formData.recipientPhone
-      });
-
-      console.log('SMS sent successfully!', formData, response.status);
-      if (response.status == "200") {
+      dispatch(sendMessage(formData))
+      console.log('SMS sent successfully!', formData, chatResponse);
+      if (chatResponse == "200") {
         setIsSuccess(true)
       } else {
         setIsSuccess(false)

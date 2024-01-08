@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState } from "react";
-import usaFlag from "../../assets/svg/usa-flag.svg";
+import usaFlag from "../../assets/images/usa-flag.gif";
 import logo from "../../assets/images/logo.png";
 import { Link } from "react-router-dom";
 import AOS from 'aos';
@@ -41,8 +41,9 @@ const Header = ({ active, setActive }) => {
                 <p>Contact us: Call or Text</p>
                 <div className="telephone-contact">
                   <Link to="tel:+309 872-6245">
-                    <i className="fa-solid fa-phone"></i>
-                    <span>(309) 872-6245</span>
+                    <span className="num-one"> <i className="fa-solid fa-phone"></i> <span className=" num-line">
+                      (309) USA-MAIL</span> </span>
+                    <span className="num-two num-line">(309) 872-6245</span>
                   </Link>
                 </div>
               </div>

@@ -11,12 +11,16 @@ import target from '../assets/svg/target.svg'
 import contactPhone from '../assets/svg/contact-phone.svg'
 import contactMail from '../assets/svg/contact-mail.svg'
 import globe from '../assets/svg/globe-1.svg'
-import article1 from '../assets/images/articles-1.png'
-import article2 from '../assets/images/articles-2.png'
-import article3 from '../assets/images/articles-3.png'
+import article1 from '../assets/images/articles-1.jpg'
+import article2 from '../assets/images/articles-2.jpg'
+import article3 from '../assets/images/articles-3.jpg'
 import article4 from '../assets/images/articles-4.png'
-import article5 from '../assets/images/articles-5.png'
-import article6 from '../assets/images/articles-6.png'
+import article5 from '../assets/images/articles-5.jpg'
+import article6 from '../assets/images/articles-6.jpg'
+import article7 from '../assets/images/articles-7.jpg'
+import article8 from '../assets/images/articles-1.png'
+import article9 from '../assets/images/articles-2.png'
+import article10 from '../assets/images/articles-3.png'
 export const campaignData = [
     {
         image : campaign1,
@@ -282,42 +286,42 @@ export const articles = [
         link : '/article-details',
         articleInfo : "The goal with direct mail is to capture their attention, peek their interest, then play to their curiosity with an irresistible offer and call them to action. You want them to take the direct mail piece that is in their hand and immediately scan in the QR Code and go in to your website. Your “Call to Action” should involve scanning in the QR Code and moving the customer to your online portal. Your website should have all of the information they need to make a purchasing decision and close the sale. Also, the branding, colors, and imagery of your website should match the look of your mail piece. Be consistent."
     },    {
-        image : article4,
+        image : article5,
         date : '15 Sep, 2023',
         heading : 'Do not overlook even the smallest detail.',
         link : '/article-details',
         articleInfo : "Careful oversight of fulfillment and mailing services is crucial. Make sure your documents are proofed and ready before submitting into production. Make sure you supply all of the required data fields when you prep the data. Make sure the number of records you send over is the correct number from your master list. Verify everything. Make sure everything is producing and printing properly. Let multiple people proofread."
     },
     {
-        image : article4,
+        image : article6,
         date : '15 Sep, 2023',
         heading : 'Test and then test again.',
         link : '/article-details',
         articleInfo : "Every mailing you send out is part of your active test marketing. The effectiveness of your direct mail campaigns can always be perfected by testing and retesting the mailings you are promulgating. Timing, message clarity, creative effectiveness, response rate, offer, and other criteria can easily be gauged through tracking the data and monitoring response rates. Document every statistic and track the variables over multiple mailings. Do not skip this step. It is imperative that you figure out what is working and what is not. Do not make assumptions. Test it."
     },
     {
-        image : article5,
+        image : article7,
         date : '12 Sep, 2023',
         heading : 'Measure & evaluate.',
         link : '/article-details',
         articleInfo : "Measure results accurately and track your success factor-by-factor and campaign by campaign. This is how you will determine the cost per lead and ROI. This will help you budget accordingly for all of your marketing efforts. It pays to know the truth. So don't ignore the truth."
     },
     {
-        image : article4,
+        image : article8,
         date : '15 Sep, 2023',
         heading : 'Mail repeatedly to the same list. Be consistent.',
         link : '/article-details',
         articleInfo : "Response rates go up with each consecutive touch. Don’t mail to a list just once, get frustrated and give up. Make sure your offers, your branding, your color schemes, your messaging, your contact information, etc…. is consistent mailing to mailing. You also want the branding to match whatever you’re doing with any of your marketing projects. You want the customers to recognize that this is related to the previous offer they received earlier. Response rates go up with each consecutive hit."
     },
     {
-        image : article4,
+        image : article9,
         date : '15 Sep, 2023',
         heading : 'Make it easy for all of your customers to respond.',
         link : '/article-details',
         articleInfo : "Optimize the design of your direct mail pieces to illicit a response. Remember, customers will tend to want to respond using different communication mediums. Don’t limit their options. Offer customers a choice of response mechanisms and repeat them often. Always have a QR Code, but also include your written web address, email, phone #, etc… This will greatly increase the probability of rapid response. Don’t just talk about your product or service and assume that the customer will be so impressed that they’ll do whatever it takes to contact you. Give them options. Keep it simple. Always repeat the offer and the expiration date. Call them to action."
     },
     {
-        image : article6,
+        image : article10,
         date : '10 Sep, 2023',
         heading : 'Enjoy the fruit.',
         link : '/article-details',

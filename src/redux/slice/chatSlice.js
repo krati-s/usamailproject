@@ -1,20 +1,17 @@
 import { createSlice,createAsyncThunk } from "@reduxjs/toolkit";
 import { registerUserService } from "../service/chatServices";
 
-
-
-
 export const sendMessage = createAsyncThunk(
     'chat',
     async ( formData ) => {
-        const data = await registerUserService(formData)  
-        console.log('form data',data);      
-        return data
+        const data = await registerUserService(formData)     
+        return {data : data.data , status : data.status}
     }
 )
 
 const initialState  = {
-  data : [],
+  status : null,
+  data : null
 };
 
 const chatSlice = createSlice({
@@ -23,8 +20,8 @@ const chatSlice = createSlice({
     reducers: {},
     extraReducers: (builder) => {
       builder.addCase(sendMessage.fulfilled, (state, action) => {
-        state.data = action.payload
-        console.log('chat slice',action.payload);
+        state.status = action.payload.status
+        state.data = action.payload.data
       });
     },
   });
